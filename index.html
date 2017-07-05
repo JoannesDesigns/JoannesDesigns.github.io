@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Joanne's Website | Portfolio</title>
+<!--<link  rel="stylesheet" href="css/StyleSheet.css">-->
+<!--<script src="js/Greeting.js"></script>
+<script src="js/Showslides.js"></script>-->
+<script language="javascript">
+//---------------------------------------------------------------------------------------
+Slide=0;
+Num=1;
+TotalNum=new Array(3,6,1,3)
+function ShowSlides(slidenum) {
+MySlides=new Array("images/1.png","images/2.png","images/3.png","images/4.png")
+MyTitle=new Array("Project 1 of 4","Project 2 of 4","Project 3 of 4","Project 4 of 4")
+MyInfo=new Array("<span Class='Bold'>Project 1:</span><br>This was a lesson that involved choosing a director from a given list; carrying out research that included watching three movies (I enjoyed that part); preparing thumbnails of various ideas for a minimalist movie poster; choosing one thumbnail for refinement and then using Adobe Illustrator to reproduce the thumbnail and finalise the poster.<br>I chose Christopher Nolan; and these images are the result of my work.",
+				 "<span Class='Bold'>Project 2:</span><br>This training exercise involved creating a series of icons for the following emotions: Happy, Sad, Angry, Tired and two others.  The two others was left upto me (I decided on Confused and Surprised). To allow easy scaling of the artwork, these Emojins were constructed as vectors in Adobe Illustrator.<br>Can you work out what emotions these images represent?",
+				 "<span Class='Bold'>Project 3:</span><br>This lesson involved creating a two colour pattern for a skateboard design. Tasks included research, a brainstorm and the preparation of five original drawings that was finished using black pen. These drawings were then used to create the final pattern in Adobe Photoshop.<br>The artwork for the skateboard needed to be based on a summer theme.",
+				 "<span Class='Bold'>Project 4:</span><br>This lesson involved producing three 'Graphic Design' headlines with strong contrast between the two words. Thumbnails were created using size, weight, structure, form, direction and colour/texture to contrast the two words. The three strongest options were then recreated using InDesign. These images are the results. The first image principally uses size to contrast between the two words, the second uses structure, whilst the third uses colour and texture.")
+Slide=Slide+slidenum;
+if (Slide>MySlides.length-1){
+Slide=0
+}
+if (Slide<0) {
+Slide=MySlides.length-1
+}
+Project=Slide+1
+Title1.innerHTML = MyTitle[Slide];
+Title2.innerHTML = "Project "+Project+": Image 1 of "+TotalNum[Slide];
+document.DisplaySlide.src=MySlides[Slide];
+document.getElementById("Text").innerHTML = MyInfo[Slide];
+document.getElementById("innerframe").className = "innerframe1";
+Num=1;
+}
+//---------------------------------------------------------------------------------------
+function changeimage(ImageNum){
+Project=Slide+1
+Index=Slide
+Num=Num+ImageNum
+if (Num>TotalNum[Index]){
+Num=1
+}
+if (Num<=0) {
+Num=TotalNum[Index]
+}
+document.getElementById("innerframe").className = "innerframe"+Num;
+Title2.innerHTML ="Project "+Project+": Image "+Num+" of "+TotalNum[Index];
+}
+//---------------------------------------------------------------------------------------
+</script>
+</head>
+<body>
+<style>
+#outerouterdiv
+{position:absolute;top:370px;left:345px;}
+#outerdiv
+{width:800px;height:1130px;overflow:hidden;position:relative;}
+.innerframe1
+{position:absolute;top:0px;left:0px;width:800px;height:1130px;}
+.innerframe2
+{position:absolute;top:0px;left:-900px;width:800px;height:1130px;}
+.innerframe3
+{position:absolute;top:0px;left:-1800px;width:800px;height:1130px;}
+.innerframe4
+{position:absolute;top:0px;left:-2700px;width:800px;height:1130px;}
+.innerframe5
+{position:absolute;top:0px;left:-3600px;width:800px;height:1130px;}
+.innerframe6
+{position:absolute;top:0px;left:-4500px;width:800px;height:1130px;}
+.Title {
+	font-size: 40px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+	color: #000000;	
+	}
+.Title1 {
+	font-size: 40px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-style: normal;
+	font-weight: bolder;
+	text-align: center;
+	color: #000000;	
+	position: absolute; top: 205px; left: 590px;
+}
+.Title2 {
+	font-size: 40px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+	color: #000000;	
+	position: absolute; top: 255px; left: 510px;
+}
+p.Text {
+	font-size: 24px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	text-align: right;
+	color: #000000;
+	word-wrap: break-word;
+	line-height: 32px;
+}
+p.TextJustify {
+	font-size: 24px;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	text-align: justify;
+	color: #000000;
+	word-wrap: break-word;
+	line-height: 32px;
+}
+.Bold {
+font-weight: bolder;
+}
+.Slide1 {
+top: 350px;
+left: 350px;
+position: absolute;
+display: inline-block;
+width:800px;
+height:1130px;
+}
+.Slide2 {
+  top: 350px;
+  left: -555px;
+  position: absolute;
+}
+.Slide3 {
+  top: 350px;
+  left: 350px;
+  position: absolute;
+}
+#DisplaySlide {
+	 clip-path: inset(0px 0px 0px 0px)
+	}
+#Portrait1 {
+	clip-path: inset(0px 0px 0px 0px)
+}
+#Portrait3 {
+	clip-path: inset(0px 0px 0px 0px)
+}
+#Portrait4 {
+	clip-path: inset(0px 0px 0px 0px)
+}
+.Logo {
+	position: absolute; top: 40px; left: 50px;
+}
+.Portrait {
+	position: absolute; top: 180px; left: 500px;
+}
+.Hello {
+	position: absolute; top: 370px; left: 150px;
+}
+.Myportfolio {
+	position: absolute; top: 10px; left: 260px;
+}
+.AlwaysStrive {
+	position: absolute; top: 20px; left: 320px;
+}
+.Getintouch {
+	position: absolute; top: 40px; left: 450px;
+}
+.email {
+	position: absolute; top: 60px; left: 1100px;
+}
+.Portfolio {
+	position: absolute; top: 30px; left: 980px;
+}
+.Portfolio1 {
+	position: absolute; top: 30px; left: 1100px;
+}
+.J {
+	position: absolute; top: 170px; left: 80px;
+}
+.J1 {
+	
+}
+.Frame {
+	position: absolute; top: 340px; left: 330px;
+}
+#Left1 {
+	transform: rotate(0deg);
+	position: absolute; top: 265px; left: 430px;
+}
+#Right1 {
+	position: absolute; top: 265px; left: 990px;
+	}
+.Left2 {
+	position: absolute; top: 310px; left: 430px;
+}
+.Right2 {
+	position: absolute; top: 310px; left: 990px;
+}
+.Show {
+	position: absolute; top: 1070px; left: 330px;
+	}
+.Infobox {
+	position: absolute; top: 640px; left: 50px;
+	max-width: 270px; max-height: 835px;
+	overflow: hidden;
+	}
+.Infobox1 {
+	position: absolute; top: 480px; left: 50px;
+	max-width: 1200px; max-height: 835px;
+	overflow: hidden;
+	}
+.circles {
+  position: absolute;top: 220px; left: 520px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 15px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  font-size: 0;
+}
+
+.circle:last-child {
+  margin-right: 0;
+}
+
+.circle:hover {
+  cursor: pointer;
+}
+
+.active-circle {
+  background: #000;
+}
+#email-form {
+	position: absolute; top: 200px; left: 400px;
+	}
+</style>
+<div id="outerouterdiv">
+<div id="outerdiv">
+<div id="innerframe" Class="innerframe1">
+<img name="DisplaySlide" id="DisplaySlide" src="images/1.png" alt="Project Images" />
+</div>
+</div>
+</div>
+
+<!--<div class="Logo">
+<a href="Page-Home.html"> 
+<img src="images/Logo.png" alt="Joanne's Website Logo" />
+</a>
+</div>-->
+<div class="Myportfolio">
+<img src="images/Myportfolio.png" alt="Page Title - My Portfolio" />
+</div>
+<!--<div class="email">
+<a href="Page-email.html">
+<img src="images/email.png" alt="email icon" />
+</a>
+</div>-->
+<div  class="J">
+<img src="images/J.png" alt="J Logo" />
+</div>
+<div>
+<!--<img id="Left1" src="images/Left.png" alt="Left Button" onclick="ShowSlides(-1)"/>-->
+<img id="Left1" src="images/Left.png" alt="Left Button" onclick="ShowSlides(-1);" onmouseover="" style="cursor: pointer;"/>
+</div>
+<div class="Title1">
+<p id="Title1">Project 1 of 4</p>
+</div>
+<div>
+<!--<img id="Right1" src="images/Right.png" alt="Right Button" onclick="ShowSlides(1)"/>-->
+<img id="Right1" src="images/Right.png" alt="Right Button" onclick="ShowSlides(1);" onmouseover="" style="cursor: pointer;"/>
+</div>
+<div class="Left2">
+<img src="images/Left.png" alt="Left Button" onclick="changeimage(-1);" onmouseover="" style="cursor: pointer;"/>
+</div>
+<div class="Title2">
+<p id="Title2">Project 1: Image 1 of 3</p>
+</div>
+<div class="Right2">
+<img src="images/Right.png" alt="Right Button" onclick="changeimage(1);" onmouseover="" style="cursor: pointer;"/>
+</div>
+<div class="Frame">
+<img src="images/Frame.png" alt="Slideshow Frame" />
+</div>
+<div class="Infobox">
+<p id="Text" Class="Text"><span Class="Bold">Project 1:</span><br>This was a lesson that involved choosing a director from a given list; carrying out research that included watching three movies (I enjoyed that part); preparing thumbnails of various ideas for a minimalist movie poster; choosing one thumbnail for refinement and then using Adobe Illustrator to reproduce the thumbnail and finalise the poster.<br>I chose Christopher Nolan; and these images are the result of my work.</p>
+</div>
+</body>
+</html>
